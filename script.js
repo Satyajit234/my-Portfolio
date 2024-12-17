@@ -21,4 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-  
+  document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll("blockquote");
+    let index = 0;
+
+    setInterval(() => {
+        testimonials.forEach(t => t.style.display = "none");
+        testimonials[index].style.display = "block";
+        index = (index + 1) % testimonials.length;
+    }, 2000); // Change every 5 seconds
+});
